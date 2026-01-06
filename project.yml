@@ -41,6 +41,9 @@ targets:
       path: RoutineWidgets/RoutineWidgets.entitlements
     info:
       path: RoutineWidgets/Info.plist
+      properties:
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.rossclark.routine.widgets
@@ -75,6 +78,11 @@ targets:
       path: RoutineWatchExtension/RoutineWatchExtension.entitlements
     info:
       path: RoutineWatchExtension/Info.plist
+      properties:
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.watchkit
+          NSExtensionAttributes:
+            WKAppBundleIdentifier: com.rossclark.routine.watchapp
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.rossclark.routine.watchext
@@ -90,6 +98,9 @@ targets:
       path: RoutineWatchWidgets/RoutineWatchWidgets.entitlements
     info:
       path: RoutineWatchWidgets/Info.plist
+      properties:
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.rossclark.routine.watchwidgets
