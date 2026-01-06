@@ -20,5 +20,7 @@
 	<string>1</string>
 	<key>WKWatchKitApp</key>
 	<true/>
+	<key>WKCompanionAppBundleIdentifier</key>
+	<string>com.rossclark.routine</string>
 </dict>
 </plist>
