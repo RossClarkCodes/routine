@@ -6,6 +6,7 @@ xcuserdata/
 *.xcodeproj/*
 !*.xcodeproj/project.pbxproj
 !*.xcodeproj/xcshareddata/
+!*.xcodeproj/xcshareddata/**
 !*.xcodeproj/project.xcworkspace/
 *.xcworkspace/xcuserdata/
 DerivedData/
