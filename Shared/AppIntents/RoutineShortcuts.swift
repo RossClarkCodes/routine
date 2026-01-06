@@ -4,25 +4,25 @@ struct RoutineShortcuts: AppShortcutsProvider {
     static var appShortcuts: [AppShortcut] {
         AppShortcut(
             intent: StartMyDayIntent(),
-            phrases: ["Start My Day", "Begin Routine"],
+            phrases: ["\(.applicationName) Start My Day", "\(.applicationName) Begin Routine"],
             shortTitle: "Start",
             systemImageName: "sunrise"
         )
         AppShortcut(
             intent: AddGratitudeIntent(),
-            phrases: ["Add Gratitude", "Add Gratitude \(\.$text)"],
+            phrases: ["\(.applicationName) Add Gratitude", "\(.applicationName) Gratitude"],
             shortTitle: "Gratitude",
             systemImageName: "heart"
         )
         AppShortcut(
             intent: CompleteRoutineIntent(),
-            phrases: ["Complete Routine", "Finish Routine"],
+            phrases: ["\(.applicationName) Complete Routine", "\(.applicationName) Finish Routine"],
             shortTitle: "Complete",
             systemImageName: "checkmark"
         )
         AppShortcut(
             intent: ShowTodayIntent(),
-            phrases: ["Show Today", "Open Routine"],
+            phrases: ["\(.applicationName) Show Today", "\(.applicationName) Open Routine"],
             shortTitle: "Today",
             systemImageName: "calendar"
         )
