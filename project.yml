@@ -57,15 +57,10 @@ targets:
       - path: RoutineWatchApp
     entitlements:
       path: RoutineWatchApp/RoutineWatchApp.entitlements
-    info:
-      path: RoutineWatchApp/Info.plist
-      properties:
-        WKWatchKitApp: true
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.rossclark.routine.watch
-        GENERATE_INFOPLIST_FILE: NO
-        INFOPLIST_KEY_WKWatchKitApp: YES
+        INFOPLIST_FILE: RoutineWatchApp/Info.plist
     dependencies:
       - target: RoutineWatchExtension
         embed: true
@@ -91,10 +86,7 @@ targets:
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.rossclark.routine.watch.extension
-      configs:
-        Debug:
-          CODE_SIGN_ALLOW_ENTITLEMENTS_MODIFICATION: YES
-      SKIP_INSTALL: YES
+        SKIP_INSTALL: YES
 
   RoutineWatchWidgets:
     type: app-extension

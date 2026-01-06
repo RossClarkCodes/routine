@@ -938,7 +938,6 @@
 		77511BFB9E3C160D2DD3C2BF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ALLOW_ENTITLEMENTS_MODIFICATION = YES;
 				CODE_SIGN_ENTITLEMENTS = RoutineWatchExtension/RoutineWatchExtension.entitlements;
 				INFOPLIST_FILE = RoutineWatchExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -958,9 +957,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = RoutineWatchApp/RoutineWatchApp.entitlements;
-				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = RoutineWatchApp/Info.plist;
-				INFOPLIST_KEY_WKWatchKitApp = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rossclark.routine.watch;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1023,9 +1020,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = RoutineWatchApp/RoutineWatchApp.entitlements;
-				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = RoutineWatchApp/Info.plist;
-				INFOPLIST_KEY_WKWatchKitApp = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rossclark.routine.watch;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
