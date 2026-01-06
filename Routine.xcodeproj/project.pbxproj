@@ -18,6 +18,7 @@
 		1BEFF728E19C667B3DE929E5 /* quotes.json in Resources */ = {isa = PBXBuildFile; fileRef = A1C407C86602146687159660 /* quotes.json */; };
 		1CB0C7C1B65B930BE717A54E /* affirmations.json in Resources */ = {isa = PBXBuildFile; fileRef = 1758390C69446A216C40CCC4 /* affirmations.json */; };
 		1DAC975F5EFF863062D479CC /* SwiftDataDailyEntryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9156AFF18BC391060F48EE8 /* SwiftDataDailyEntryStore.swift */; };
+		1E2449E5737F3CAEBBAB40C9 /* RoutineWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F9F2FD8CFBD18CDBC760D5 /* RoutineWatchApp.swift */; };
 		1F80D29233C1A33D69533C32 /* DailyEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0166AEBD797A8A2DFA0F547B /* DailyEntry.swift */; };
 		2219D7AFF54A497FE2443FE7 /* DailyEntryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD551D30C59FEF5533C79D1F /* DailyEntryStore.swift */; };
 		242B563349632C20B11E4738 /* SystemUpdateCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BEE20CB2D16F564CD31CCD /* SystemUpdateCenter.swift */; };
@@ -187,6 +188,7 @@
 		1672238D5BDB581EA36F4C83 /* WatchHapticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchHapticsService.swift; sourceTree = "<group>"; };
 		1758390C69446A216C40CCC4 /* affirmations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = affirmations.json; sourceTree = "<group>"; };
 		1FC9325DC7E26525165390EE /* BundleLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleLocator.swift; sourceTree = "<group>"; };
+		28F9F2FD8CFBD18CDBC760D5 /* RoutineWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineWatchApp.swift; sourceTree = "<group>"; };
 		2D22761D58ABC777C19E4A93 /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
 		301D6EE88C6DC8BD466378F1 /* RoutineWidgets.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = RoutineWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		30777D3349E700741ED61792 /* EntitlementsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntitlementsManager.swift; sourceTree = "<group>"; };
@@ -344,6 +346,7 @@
 			children = (
 				D71B9D362E31B0A2954C1352 /* Info.plist */,
 				E9841A5C9C6EA1612DE0760E /* RoutineWatchApp.entitlements */,
+				28F9F2FD8CFBD18CDBC760D5 /* RoutineWatchApp.swift */,
 			);
 			path = RoutineWatchApp;
 			sourceTree = "<group>";
@@ -600,6 +603,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E2449E5737F3CAEBBAB40C9 /* RoutineWatchApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
