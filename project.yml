@@ -59,6 +59,8 @@ targets:
       path: RoutineWatchApp/RoutineWatchApp.entitlements
     info:
       path: RoutineWatchApp/Info.plist
+      properties:
+        WKWatchKitApp: true
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.rossclark.routine.watch
@@ -83,10 +85,13 @@ targets:
         NSExtension:
           NSExtensionPointIdentifier: com.apple.watchkit
           NSExtensionAttributes:
-            WKAppBundleIdentifier: com.rossclark.routine.watchapp
+            WKAppBundleIdentifier: com.rossclark.routine.watch
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.rossclark.routine.watch.extension
+      configs:
+        Debug:
+          CODE_SIGN_ALLOW_ENTITLEMENTS_MODIFICATION: YES
 
   RoutineWatchWidgets:
     type: app-extension

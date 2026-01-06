@@ -934,6 +934,7 @@
 		77511BFB9E3C160D2DD3C2BF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ALLOW_ENTITLEMENTS_MODIFICATION = YES;
 				CODE_SIGN_ENTITLEMENTS = RoutineWatchExtension/RoutineWatchExtension.entitlements;
 				INFOPLIST_FILE = RoutineWatchExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
