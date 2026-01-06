@@ -94,6 +94,7 @@ targets:
       configs:
         Debug:
           CODE_SIGN_ALLOW_ENTITLEMENTS_MODIFICATION: YES
+      SKIP_INSTALL: YES
 
   RoutineWatchWidgets:
     type: app-extension
@@ -112,3 +113,4 @@ targets:
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.rossclark.routine.watch.widgets
+        SKIP_INSTALL: YES
