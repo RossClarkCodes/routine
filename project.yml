@@ -1,0 +1,95 @@
+name: Routine
+options:
+  bundleIdPrefix: com.rossclark
+settings:
+  base:
+    IPHONEOS_DEPLOYMENT_TARGET: "26.0"
+    WATCHOS_DEPLOYMENT_TARGET: "11.0"
+    SWIFT_VERSION: "6.0"
+
+targets:
+  RoutineApp:
+    type: application
+    platform: iOS
+    sources:
+      - path: RoutineApp
+      - path: Shared
+    resources:
+      - path: Shared/Resources
+    entitlements:
+      path: RoutineApp/RoutineApp.entitlements
+    info:
+      path: RoutineApp/Info.plist
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.rossclark.routine
+    dependencies:
+      - target: RoutineWidgets
+        embed: true
+      - target: RoutineWatchApp
+        embed: true
+
+  RoutineWidgets:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: RoutineWidgets
+      - path: Shared
+    resources:
+      - path: Shared/Resources
+    entitlements:
+      path: RoutineWidgets/RoutineWidgets.entitlements
+    info:
+      path: RoutineWidgets/Info.plist
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.rossclark.routine.widgets
+
+  RoutineWatchApp:
+    type: application
+    platform: watchOS
+    productType: com.apple.product-type.application.watchapp2
+    sources:
+      - path: RoutineWatchApp
+    entitlements:
+      path: RoutineWatchApp/RoutineWatchApp.entitlements
+    info:
+      path: RoutineWatchApp/Info.plist
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.rossclark.routine.watchapp
+    dependencies:
+      - target: RoutineWatchExtension
+        embed: true
+      - target: RoutineWatchWidgets
+        embed: true
+
+  RoutineWatchExtension:
+    type: app-extension
+    platform: watchOS
+    productType: com.apple.product-type.watchkit2-extension
+    sources:
+      - path: RoutineWatchExtension
+      - path: Shared
+    entitlements:
+      path: RoutineWatchExtension/RoutineWatchExtension.entitlements
+    info:
+      path: RoutineWatchExtension/Info.plist
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.rossclark.routine.watchext
+
+  RoutineWatchWidgets:
+    type: app-extension
+    platform: watchOS
+    productType: com.apple.product-type.widgetkit-extension
+    sources:
+      - path: RoutineWatchWidgets
+      - path: Shared
+    entitlements:
+      path: RoutineWatchWidgets/RoutineWatchWidgets.entitlements
+    info:
+      path: RoutineWatchWidgets/Info.plist
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.rossclark.routine.watchwidgets
