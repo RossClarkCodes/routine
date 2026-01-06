@@ -11,10 +11,10 @@ struct SettingsView: View {
                 Toggle("Daily reminder", isOn: $notificationsEnabled)
                     .onChange(of: notificationsEnabled) { _, enabled in
                         if enabled {
-                            Task { _ = await NotificationCenterCoordinator.shared.requestProvisionalAuthorization() }
-                            NotificationCenterCoordinator.shared.scheduleDailyReminder(hour: notificationHour, minute: notificationMinute)
+                            Task { _ = await NotificationCenterCoordinator.requestProvisionalAuthorization() }
+                            NotificationCenterCoordinator.scheduleDailyReminder(hour: notificationHour, minute: notificationMinute)
                         } else {
-                            NotificationCenterCoordinator.shared.cancelDailyReminder()
+                            NotificationCenterCoordinator.cancelDailyReminder()
                         }
                     }
                 DatePicker("Time", selection: bindingForTime, displayedComponents: .hourAndMinute)
@@ -42,7 +42,7 @@ struct SettingsView: View {
                 notificationHour = components.hour ?? 8
                 notificationMinute = components.minute ?? 0
                 if notificationsEnabled {
-                    NotificationCenterCoordinator.shared.scheduleDailyReminder(hour: notificationHour, minute: notificationMinute)
+                    NotificationCenterCoordinator.scheduleDailyReminder(hour: notificationHour, minute: notificationMinute)
                 }
             }
         )

@@ -184,10 +184,10 @@ struct TodayView: View {
         switch entry.status {
         case .empty:
             Task { try? await RoutineEngine.shared.startDay() }
-            HapticsService.shared.play(.routineStart)
+            HapticsService.play(.routineStart)
         case .inProgress:
             Task { try? await RoutineEngine.shared.complete() }
-            HapticsService.shared.play(.complete)
+            HapticsService.play(.complete)
         case .completed:
             break
         }

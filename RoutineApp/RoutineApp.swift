@@ -13,12 +13,12 @@ struct RoutineApp: App {
                 .environment(appState)
                 .modelContainer(ModelContainerProvider.shared)
                 .onAppear {
-                    NotificationCenterCoordinator.shared.configure(delegate: notificationsDelegate)
-                    BackgroundTasksManager.shared.register()
+                    NotificationCenterCoordinator.configure(delegate: notificationsDelegate)
+                    BackgroundTasksManager.register()
                 }
                 .onChange(of: scenePhase) { _, phase in
                     if phase == .background {
-                        BackgroundTasksManager.shared.schedulePrewarm()
+                        BackgroundTasksManager.schedulePrewarm()
                     }
                 }
         }

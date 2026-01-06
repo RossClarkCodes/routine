@@ -10,16 +10,15 @@ enum NotificationIdentifiers {
     static let actionSkip = "routine.action.skip"
 }
 
-final class NotificationCenterCoordinator {
-    static let shared = NotificationCenterCoordinator()
-
-    func configure(delegate: UNUserNotificationCenterDelegate) {
+@MainActor
+enum NotificationCenterCoordinator {
+    static func configure(delegate: UNUserNotificationCenterDelegate) {
         let center = UNUserNotificationCenter.current()
         center.delegate = delegate
         configureCategories()
     }
 
-    func requestProvisionalAuthorization() async -> Bool {
+    static func requestProvisionalAuthorization() async -> Bool {
         let center = UNUserNotificationCenter.current()
         do {
             return try await center.requestAuthorization(options: [.alert, .badge, .sound, .provisional])
@@ -28,7 +27,7 @@ final class NotificationCenterCoordinator {
         }
     }
 
-    func scheduleDailyReminder(hour: Int, minute: Int) {
+    static func scheduleDailyReminder(hour: Int, minute: Int) {
         cancelDailyReminder()
         let content = UNMutableNotificationContent()
         content.title = "Your intention is ready"
@@ -45,11 +44,11 @@ final class NotificationCenterCoordinator {
         UNUserNotificationCenter.current().add(request)
     }
 
-    func cancelDailyReminder() {
+    static func cancelDailyReminder() {
         UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [NotificationIdentifiers.dailyReminder])
     }
 
-    private func configureCategories() {
+    private static func configureCategories() {
         let start = UNNotificationAction(identifier: NotificationIdentifiers.actionStart, title: "Start My Day")
         let addGratitude = UNTextInputNotificationAction(identifier: NotificationIdentifiers.actionAddGratitude, title: "Add Gratitude", options: [], textInputButtonTitle: "Save", textInputPlaceholder: "I’m grateful for...")
         let complete = UNNotificationAction(identifier: NotificationIdentifiers.actionComplete, title: "Complete")

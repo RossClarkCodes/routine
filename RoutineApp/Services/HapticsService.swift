@@ -9,25 +9,16 @@ enum HapticPattern {
     case error
 }
 
-final class HapticsService {
-    static let shared = HapticsService()
-    private var engine: CHHapticEngine?
+@MainActor
+enum HapticsService {
+    private static var engine: CHHapticEngine?
 
-    private init() {
-        prepareEngine()
-    }
-
-    private func prepareEngine() {
-        guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else { return }
-        engine = try? CHHapticEngine()
-        try? engine?.start()
-    }
-
-    func play(_ pattern: HapticPattern) {
+    static func play(_ pattern: HapticPattern) {
         guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else {
             fallback(pattern)
             return
         }
+        ensureEngine()
         do {
             let event = CHHapticEvent(eventType: .hapticTransient, parameters: [
                 CHHapticEventParameter(parameterID: .hapticIntensity, value: intensity(for: pattern)),
@@ -41,7 +32,13 @@ final class HapticsService {
         }
     }
 
-    private func intensity(for pattern: HapticPattern) -> Float {
+    private static func ensureEngine() {
+        guard engine == nil else { return }
+        engine = try? CHHapticEngine()
+        try? engine?.start()
+    }
+
+    private static func intensity(for pattern: HapticPattern) -> Float {
         switch pattern {
         case .routineStart: return 0.6
         case .stepAdvance: return 0.4
@@ -50,7 +47,7 @@ final class HapticsService {
         }
     }
 
-    private func sharpness(for pattern: HapticPattern) -> Float {
+    private static func sharpness(for pattern: HapticPattern) -> Float {
         switch pattern {
         case .routineStart: return 0.5
         case .stepAdvance: return 0.4
@@ -59,7 +56,7 @@ final class HapticsService {
         }
     }
 
-    private func fallback(_ pattern: HapticPattern) {
+    private static func fallback(_ pattern: HapticPattern) {
         let generator = UINotificationFeedbackGenerator()
         switch pattern {
         case .complete:
