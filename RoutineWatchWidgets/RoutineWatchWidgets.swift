@@ -12,11 +12,11 @@ struct RoutineComplicationProvider: TimelineProvider {
     }
 
     func getSnapshot(in context: Context, completion: @escaping (RoutineComplicationEntry) -> Void) {
-        completion(RoutineComplicationEntry(date: Date(), snapshot: SnapshotStore.shared.load() ?? TodaySnapshot.empty(for: DayKeying.today())))
+        completion(RoutineComplicationEntry(date: Date(), snapshot: SnapshotStore.load() ?? TodaySnapshot.empty(for: DayKeying.today())))
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<RoutineComplicationEntry>) -> Void) {
-        let snapshot = SnapshotStore.shared.load() ?? TodaySnapshot.empty(for: DayKeying.today())
+        let snapshot = SnapshotStore.load() ?? TodaySnapshot.empty(for: DayKeying.today())
         let entry = RoutineComplicationEntry(date: Date(), snapshot: snapshot)
         let next = Calendar.current.startOfDay(for: Date().addingTimeInterval(60 * 60 * 24))
         completion(Timeline(entries: [entry], policy: .after(next)))

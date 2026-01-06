@@ -2,7 +2,7 @@ import AppIntents
 import SwiftUI
 
 struct WatchTodayView: View {
-    @State private var snapshot = SnapshotStore.shared.load() ?? TodaySnapshot.empty(for: DayKeying.today())
+    @State private var snapshot = SnapshotStore.load() ?? TodaySnapshot.empty(for: DayKeying.today())
     @State private var lastStatus: TodayStatus = .ready
     @State private var hasLoaded = false
 
@@ -65,7 +65,7 @@ struct WatchTodayView: View {
     }
 
     private func reloadSnapshot() {
-        let latest = SnapshotStore.shared.load() ?? TodaySnapshot.empty(for: DayKeying.today())
+        let latest = SnapshotStore.load() ?? TodaySnapshot.empty(for: DayKeying.today())
         if !hasLoaded {
             snapshot = latest
             lastStatus = latest.status

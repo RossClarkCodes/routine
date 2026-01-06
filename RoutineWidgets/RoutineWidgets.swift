@@ -14,11 +14,11 @@ struct RoutineTimelineProvider: TimelineProvider {
     }
 
     func getSnapshot(in context: Context, completion: @escaping (RoutineEntry) -> Void) {
-        completion(RoutineEntry(date: Date(), snapshot: SnapshotStore.shared.load() ?? TodaySnapshot.empty(for: DayKeying.today())))
+        completion(RoutineEntry(date: Date(), snapshot: SnapshotStore.load() ?? TodaySnapshot.empty(for: DayKeying.today())))
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<RoutineEntry>) -> Void) {
-        let snapshot = SnapshotStore.shared.load() ?? TodaySnapshot.empty(for: DayKeying.today())
+        let snapshot = SnapshotStore.load() ?? TodaySnapshot.empty(for: DayKeying.today())
         let entry = RoutineEntry(date: Date(), snapshot: snapshot)
         let next = Calendar.current.startOfDay(for: Date().addingTimeInterval(60 * 60 * 24))
         completion(Timeline(entries: [entry], policy: .after(next)))
@@ -112,7 +112,7 @@ struct RoutineHomeMediumWidget: Widget {
                     .lineLimit(2)
                 HStack {
                     Button(intent: StartMyDayIntent()) { Text("Start") }
-                    Button(intent: AddGratitudeIntent(text: "")) { Text("Add Gratitude") }
+                    Button(intent: AddGratitudeIntent()) { Text("Add Gratitude") }
                     Button(intent: CompleteRoutineIntent()) { Text("Complete") }
                 }
                 .buttonStyle(.bordered)

@@ -3,11 +3,12 @@ import Foundation
 import WidgetKit
 #endif
 
+@MainActor
 enum SystemUpdateCenter {
-    private static var lastWidgetReload: Date?
+    @MainActor private static var lastWidgetReload: Date?
 
     @MainActor static func refresh(snapshot: TodaySnapshot) {
-        SnapshotStore.shared.save(snapshot)
+        SnapshotStore.save(snapshot)
         reloadWidgetsIfNeeded()
         LiveActivityManager.shared.sync(with: snapshot)
     }

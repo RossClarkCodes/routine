@@ -3,6 +3,7 @@ import Foundation
 #if canImport(HealthKit)
 import HealthKit
 
+@MainActor
 final class HealthKitManager {
     static let shared = HealthKitManager()
     private let store = HKHealthStore()
@@ -70,6 +71,7 @@ final class HealthKitManager {
     }
 }
 #else
+@MainActor
 final class HealthKitManager {
     static let shared = HealthKitManager()
     func requestAuthorization() async -> Bool { false }
