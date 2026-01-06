@@ -61,7 +61,7 @@ targets:
       path: RoutineWatchApp/Info.plist
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.rossclark.routine.watchapp
+        PRODUCT_BUNDLE_IDENTIFIER: com.rossclark.routine.watch
     dependencies:
       - target: RoutineWatchExtension
         embed: true
@@ -86,7 +86,7 @@ targets:
             WKAppBundleIdentifier: com.rossclark.routine.watchapp
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.rossclark.routine.watchext
+        PRODUCT_BUNDLE_IDENTIFIER: com.rossclark.routine.watch.extension
 
   RoutineWatchWidgets:
     type: app-extension
@@ -104,4 +104,4 @@ targets:
           NSExtensionPointIdentifier: com.apple.widgetkit-extension
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.rossclark.routine.watchwidgets
+        PRODUCT_BUNDLE_IDENTIFIER: com.rossclark.routine.watch.widgets

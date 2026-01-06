@@ -755,7 +755,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rossclark.routine.watchext;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rossclark.routine.watch.extension;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -941,7 +941,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rossclark.routine.watchext;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rossclark.routine.watch.extension;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -954,7 +954,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = RoutineWatchApp/RoutineWatchApp.entitlements;
 				INFOPLIST_FILE = RoutineWatchApp/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rossclark.routine.watchapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rossclark.routine.watch;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -971,7 +971,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rossclark.routine.watchwidgets;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rossclark.routine.watch.widgets;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -1004,7 +1004,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rossclark.routine.watchwidgets;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rossclark.routine.watch.widgets;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -1017,7 +1017,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = RoutineWatchApp/RoutineWatchApp.entitlements;
 				INFOPLIST_FILE = RoutineWatchApp/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rossclark.routine.watchapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rossclark.routine.watch;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
