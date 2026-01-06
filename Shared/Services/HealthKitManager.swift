@@ -16,7 +16,8 @@ final class HealthKitManager {
             HKObjectType.workoutType()
         ]
         do {
-            return try await store.requestAuthorization(toShare: shareTypes, read: readTypes)
+            try await store.requestAuthorization(toShare: shareTypes, read: readTypes)
+            return true
         } catch {
             return false
         }

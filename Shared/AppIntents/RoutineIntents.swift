@@ -2,8 +2,8 @@ import AppIntents
 import Foundation
 
 struct StartMyDayIntent: AppIntent {
-    @MainActor static var title: LocalizedStringResource { "Start My Day" }
-    @MainActor static var description: IntentDescription { IntentDescription("Begin the daily routine.") }
+    static var title: LocalizedStringResource { "Start My Day" }
+    static var description: IntentDescription { IntentDescription("Begin the daily routine.") }
 
     func perform() async throws -> some IntentResult {
         _ = try await RoutineEngine.shared.startDay()
@@ -12,9 +12,9 @@ struct StartMyDayIntent: AppIntent {
 }
 
 struct ShowTodayIntent: AppIntent {
-    @MainActor static var title: LocalizedStringResource { "Show Today" }
-    @MainActor static var description: IntentDescription { IntentDescription("Open the Today screen.") }
-    @MainActor static var openAppWhenRun: Bool { true }
+    static var title: LocalizedStringResource { "Show Today" }
+    static var description: IntentDescription { IntentDescription("Open the Today screen.") }
+    static var openAppWhenRun: Bool { true }
 
     func perform() async throws -> some IntentResult {
         return .result()
@@ -22,8 +22,8 @@ struct ShowTodayIntent: AppIntent {
 }
 
 struct SetTodaysIntentIntent: AppIntent {
-    @MainActor static var title: LocalizedStringResource { "Set Today’s Intent" }
-    @MainActor static var description: IntentDescription { IntentDescription("Save your daily intent.") }
+    static var title: LocalizedStringResource { "Set Today’s Intent" }
+    static var description: IntentDescription { IntentDescription("Save your daily intent.") }
 
     @Parameter(title: "Intent")
     var text: String
@@ -35,9 +35,9 @@ struct SetTodaysIntentIntent: AppIntent {
 }
 
 struct AddGratitudeIntent: AppIntent {
-    @MainActor static var title: LocalizedStringResource { "Add Gratitude" }
-    @MainActor static var description: IntentDescription { IntentDescription("Add a gratitude item.") }
-    @MainActor static var openAppWhenRun: Bool { true }
+    static var title: LocalizedStringResource { "Add Gratitude" }
+    static var description: IntentDescription { IntentDescription("Add a gratitude item.") }
+    static var openAppWhenRun: Bool { true }
 
     @Parameter(title: "Gratitude")
     var text: String
@@ -49,9 +49,9 @@ struct AddGratitudeIntent: AppIntent {
 }
 
 struct AddPriorityIntent: AppIntent {
-    @MainActor static var title: LocalizedStringResource { "Add Priority" }
-    @MainActor static var description: IntentDescription { IntentDescription("Add a top priority.") }
-    @MainActor static var openAppWhenRun: Bool { true }
+    static var title: LocalizedStringResource { "Add Priority" }
+    static var description: IntentDescription { IntentDescription("Add a top priority.") }
+    static var openAppWhenRun: Bool { true }
 
     @Parameter(title: "Priority")
     var text: String
@@ -63,8 +63,8 @@ struct AddPriorityIntent: AppIntent {
 }
 
 struct BeginBreathworkIntent: AppIntent {
-    @MainActor static var title: LocalizedStringResource { "Begin Breathwork" }
-    @MainActor static var description: IntentDescription { IntentDescription("Log a brief breathwork session.") }
+    static var title: LocalizedStringResource { "Begin Breathwork" }
+    static var description: IntentDescription { IntentDescription("Log a brief breathwork session.") }
 
     @Parameter(title: "Minutes", default: 1)
     var durationMinutes: Int
@@ -76,8 +76,8 @@ struct BeginBreathworkIntent: AppIntent {
 }
 
 struct CompleteRoutineIntent: AppIntent {
-    @MainActor static var title: LocalizedStringResource { "Complete Routine" }
-    @MainActor static var description: IntentDescription { IntentDescription("Complete today’s routine.") }
+    static var title: LocalizedStringResource { "Complete Routine" }
+    static var description: IntentDescription { IntentDescription("Complete today’s routine.") }
 
     func perform() async throws -> some IntentResult {
         try await RoutineEngine.shared.complete()
@@ -86,8 +86,8 @@ struct CompleteRoutineIntent: AppIntent {
 }
 
 struct SkipTodayIntent: AppIntent {
-    @MainActor static var title: LocalizedStringResource { "Skip Today" }
-    @MainActor static var description: IntentDescription { IntentDescription("Skip today’s routine.") }
+    static var title: LocalizedStringResource { "Skip Today" }
+    static var description: IntentDescription { IntentDescription("Skip today’s routine.") }
 
     func perform() async throws -> some IntentResult {
         try await RoutineEngine.shared.skipToday()
