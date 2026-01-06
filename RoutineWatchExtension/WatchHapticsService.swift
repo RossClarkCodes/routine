@@ -6,10 +6,9 @@ enum WatchHapticPattern {
     case error
 }
 
-final class WatchHapticsService {
-    static let shared = WatchHapticsService()
-
-    func play(_ pattern: WatchHapticPattern) {
+@MainActor
+enum WatchHapticsService {
+    static func play(_ pattern: WatchHapticPattern) {
         let device = WKInterfaceDevice.current()
         switch pattern {
         case .start:

@@ -15,12 +15,8 @@ final class HealthKitManager {
             HKObjectType.categoryType(forIdentifier: .sleepAnalysis)!,
             HKObjectType.workoutType()
         ]
-        do {
-            try await store.requestAuthorization(toShare: shareTypes, read: readTypes)
-            return true
-        } catch {
-            return false
-        }
+        let success = (try? await store.requestAuthorization(toShare: shareTypes, read: readTypes)) != nil
+        return success
     }
 
     func requestAuthorizationIfNeeded() async -> Bool {

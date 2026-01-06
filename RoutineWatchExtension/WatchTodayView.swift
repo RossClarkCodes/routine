@@ -75,11 +75,11 @@ struct WatchTodayView: View {
         if latest.status != lastStatus {
             switch latest.status {
             case .ready:
-                WatchHapticsService.shared.play(.start)
+                WatchHapticsService.play(.start)
             case .inProgress:
-                WatchHapticsService.shared.play(.start)
+                WatchHapticsService.play(.start)
             case .completed:
-                WatchHapticsService.shared.play(.complete)
+                WatchHapticsService.play(.complete)
             }
         }
         snapshot = latest
