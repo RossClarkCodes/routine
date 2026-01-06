@@ -64,6 +64,8 @@ targets:
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.rossclark.routine.watch
+        GENERATE_INFOPLIST_FILE: NO
+        INFOPLIST_KEY_WKWatchKitApp: YES
     dependencies:
       - target: RoutineWatchExtension
         embed: true
